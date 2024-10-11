@@ -1,4 +1,5 @@
 // lib/data file/storeview/cardwidget.dart
+
 import 'package:flutter/material.dart';
 import 'package:fruits_app/data%20file/storeview/detailscreen.dart';
 
@@ -6,7 +7,7 @@ class ProductCard extends StatelessWidget {
   final String name;
   final int price;
   final String imagePath;
-  final String description; // Add description field
+  final String description; // Description field
 
   const ProductCard({
     super.key,
@@ -34,7 +35,7 @@ class ProductCard extends StatelessWidget {
         );
       },
       child: Container(
-        height: 220,
+        height: 250,
         width: 170,
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -93,31 +94,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-// lib/data file/storeview/cart.dart
-class Cart {
-  List<Map<String, dynamic>> _items = [];
-
-  void addItem(String name, int price, int quantity, String description) {
-    _items.add({
-      'name': name,
-      'price': price,
-      'quantity': quantity,
-      'description': description,
-    });
-  }
-
-  List<Map<String, dynamic>> getItems() {
-    return _items;
-  }
-
-  int getItemCount() {
-    return _items.length;
-  }
-
-  void clearCart() {
-    _items.clear();
-  }
-}
-
-// Create a global Cart instance
-final Cart cart = Cart();

@@ -2,19 +2,38 @@
 class Assets {
   Assets._();
 
+  static const String animationPlain = 'lib/data file/animation/plain.json';
   static const String firstscreenWelcome = 'lib/data file/firstscreen/Welcome.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
+  static const String hottest food photoCuiona frits salad = 'lib/data file/storeview/product_data/hottest food photo/cuiona frits salad.png';
+  static const String hottest food photoHottestScreen = 'lib/data file/storeview/product_data/hottest food photo/hottest_screen.dart';
+  static const String hottest food photoTropical fruit salad = 'lib/data file/storeview/product_data/hottest food photo/tropical fruit salad.png';
   static const String imageMainphoto1 = 'lib/data file/firstscreen/image/mainphoto1.png';
   static const String imageSecondphoto = 'lib/data file/secondscreen/image/secondphoto.png';
   static const String imagesFruitbox = 'assets/images/fruitbox.png';
   static const String libFirebaseOptions = 'lib/firebase_options.dart';
   static const String libMain = 'lib/main.dart';
-  static const String recomendedfoodHomepizza = 'lib/data file/storeview/foodphoto/recomendedfood/homepizza.png';
+  static const String new combo food photoMix friuts combo 1 = 'lib/data file/storeview/product_data/new combo food photo/mix friuts combo 1.png';
+  static const String new combo food photoMix friuts combo 2 = 'lib/data file/storeview/product_data/new combo food photo/mix friuts combo 2.png';
+  static const String new combo food photoNewComboScreen = 'lib/data file/storeview/product_data/new combo food photo/new_combo_screen.dart';
+  static const String popular food photoApple = 'lib/data file/storeview/product_data/Popular food photo/apple.png';
+  static const String popular food photoKivi = 'lib/data file/storeview/product_data/Popular food photo/kivi.png';
+  static const String popular food photoPopularScreen = 'lib/data file/storeview/product_data/Popular food photo/popular_screen.dart';
+  static const String productDataCardpaymentscreen = 'lib/data file/storeview/product_data/cardpaymentscreen.dart';
+  static const String productDataDeliveryaddressscreen = 'lib/data file/storeview/product_data/deliveryaddressscreen.dart';
+  static const String productDataInformationscreen = 'lib/data file/storeview/product_data/informationscreen.dart';
+  static const String productDataProducts = 'lib/data file/storeview/product_data/Products.dart';
+  static const String recomendedfoodBerry mango combo = 'lib/data file/storeview/product_data/recomendedfood/berry mango combo.png';
+  static const String recomendedfoodHoney lime combo = 'lib/data file/storeview/product_data/recomendedfood/honey lime combo.png';
+  static const String recomendedfoodRecommended code = 'lib/data file/storeview/product_data/recomendedfood/recommended code.dart';
   static const String secondscreenYourname = 'lib/data file/secondscreen/yourname.dart';
   static const String storeviewCardwidget = 'lib/data file/storeview/cardwidget.dart';
+  static const String storeviewCart = 'lib/data file/storeview/cart.dart';
   static const String storeviewCartscreen = 'lib/data file/storeview/cartscreen.dart';
   static const String storeviewDetailscreen = 'lib/data file/storeview/detailscreen.dart';
-  static const String storeviewProducts = 'lib/data file/storeview/Products.dart';
-  static const String storeviewTabbar; String products = 'lib/data file/storeview/tabbar products.dart';
+  static const String storeviewTabbar products = 'lib/data file/storeview/tabbar products.dart';
+  static const String top food photoBanana = 'lib/data file/storeview/product_data/top food photo/banana.png';
+  static const String top food photoPomegranate = 'lib/data file/storeview/product_data/top food photo/pomegranate.png';
+  static const String top food photoTopScreen = 'lib/data file/storeview/product_data/top food photo/top_screen.dart';
 
 }

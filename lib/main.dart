@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'data file/firstscreen/Welcome.dart';
+import 'data file/storeview/product_data/informationscreen.dart';
 import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
       // home: Welcome(),
       home: HomePage(),
       // home: MyProducts(name: '',),
+      // home: ConfirmationScreen(userName: '',),
+
     );
   }
 }

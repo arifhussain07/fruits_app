@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  lottie: ^3.1.2
   shared_preferences: ^2.0.9
   firebase_storage: ^12.2.0
   firebase_database: ^11.1.0
@@ -55,6 +56,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
 
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -71,9 +73,12 @@ flutter:
       - assets/images/
       - lib/data file/firstscreen/image/
       - lib/data file/secondscreen/image/
-      - lib/data file/storeview/foodphoto/recomendedfood/
-
-
+      - lib/data file/storeview/product_data/recomendedfood/
+      - lib/data file/storeview/product_data/hottest food photo/
+      - lib/data file/storeview/product_data/Popular food photo/
+      - lib/data file/storeview/product_data/new combo food photo/
+      - lib/data file/storeview/product_data/top food photo/
+      - lib/data file/animation/plain.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

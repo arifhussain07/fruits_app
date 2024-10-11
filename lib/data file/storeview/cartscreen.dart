@@ -1,9 +1,10 @@
-// lib/data file/storeview/cart_screen.dart
 import 'package:flutter/material.dart';
-import 'package:fruits_app/data%20file/storeview/cardwidget.dart';
-
+import 'package:fruits_app/data%20file/storeview/cart.dart'; // Import the Cart
+import 'product_data/deliveryaddressscreen.dart';  // Import the new screen
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,17 +20,25 @@ class CartScreen extends StatelessWidget {
         itemCount: cart.getItemCount(),
         itemBuilder: (context, index) {
           final item = cart.getItems()[index];
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.orange,
-              child: Text(
-                item['quantity'].toString(),
-                style: const TextStyle(color: Colors.white),
+          return Card(
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: ListTile(
+              leading: Image.asset(
+                item['imagePath'],
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
               ),
+              title: Text(item['name']),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Description: ${item['description']}'),
+                  Text('Quantity: ${item['quantity']}'),
+                ],
+              ),
+              trailing: Text('RS: ${item['price']}'),
             ),
-            title: Text(item['name']),
-            subtitle: Text('Description: ${item['description']}'),
-            trailing: Text('RS: ${item['price']}'),
           );
         },
       ),
@@ -37,14 +46,30 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
           onPressed: () {
-            // Implement checkout functionality here
-            // For demonstration, we'll clear the cart and show a confirmation
-            if (cart.getItemCount() > 0) {
-              cart.clearCart();
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Checkout successful!')),
+            // Check if the cart is empty
+            if (cart.getItemCount() == 0) {
+              // Show a message if the cart is empty
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Cart is Empty'),
+                  content: const Text('You cannot proceed to checkout because your cart is empty.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context); // Close the dialog
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
               );
-              Navigator.pop(context);
+            } else {
+              // Navigate to the Delivery Address Screen if cart has items
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DeliveryAddressScreen()),
+              );
             }
           },
           style: ElevatedButton.styleFrom(
@@ -56,7 +81,7 @@ class CartScreen extends StatelessWidget {
           ),
           child: const Text(
             'Checkout',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 20, color: Colors.black),
           ),
         ),
       ),

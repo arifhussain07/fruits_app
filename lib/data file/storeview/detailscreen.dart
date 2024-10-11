@@ -1,18 +1,19 @@
 // lib/data file/storeview/detailscreen.dart
+
 import 'package:flutter/material.dart';
-import 'package:fruits_app/data%20file/storeview/cardwidget.dart';
+import 'package:fruits_app/data%20file/storeview/cart.dart'; // Import the Cart
 
 class FruitDetailScreen extends StatefulWidget {
   final String imagePath;
   final String name;
   final int price;
-  final String description; // Add description field
+  final String description; // Description field
 
   const FruitDetailScreen({
     required this.imagePath,
     required this.name,
     required this.price,
-    required this.description, // Include description in constructor
+    required this.description,
     super.key,
   });
 
@@ -82,7 +83,7 @@ class _FruitDetailScreenState extends State<FruitDetailScreen> {
             const SizedBox(height: 10),
             // Product Description
             Text(
-              widget.description, // Display the description
+              widget.description,
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey[600],
@@ -114,8 +115,14 @@ class _FruitDetailScreenState extends State<FruitDetailScreen> {
             // Add to Cart Button
             ElevatedButton(
               onPressed: () {
-                // Add product with description to the cart
-                cart.addItem(widget.name, widget.price, _quantity, widget.description);
+                // Add product with description and imagePath to the cart
+                cart.addItem(
+                  widget.name,
+                  widget.price,
+                  _quantity,
+                  widget.description,
+                  widget.imagePath,
+                );
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Added $_quantity ${widget.name} to cart!')),
                 );
